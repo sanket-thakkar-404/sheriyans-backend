@@ -1,0 +1,20 @@
+{
+  "name": "day-5",
+  "version": "1.0.0",
+  "description": "mongodb connect",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "npx nodemon server.js"
+  },
+  "keywords": [
+    "connecting",
+    "db"
+  ],
+  "author": "sanket thakkar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5"
+  }
+}
