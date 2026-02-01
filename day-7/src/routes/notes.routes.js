@@ -68,6 +68,33 @@ router.delete('/:id', async (req, res) => {
 })
 
 
+router.patch('/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!id) return res.status(404).json({
+      message: "Id not Found"
+    })
+
+    const { description } = req.body
+
+    if (!description) return res.status(404).json({
+      message: "description not found"
+    })
+
+    const note = await notesModel.findByIdAndUpdate(id, { description });
+
+    res.status(200).json({
+      message: "Notes Modified Successfully",
+    })
+  } catch (err) {
+    console.error("Error In deleting Notes", err.message)
+    res.status(500).json({
+      message: "internal server Error"
+    })
+  }
+
+})
+
 
 
 
